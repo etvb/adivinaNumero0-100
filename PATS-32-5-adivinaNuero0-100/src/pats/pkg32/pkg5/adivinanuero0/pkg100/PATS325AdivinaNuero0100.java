@@ -6,6 +6,8 @@ mostrar el número de intentos.
  */
 package pats.pkg32.pkg5.adivinanuero0.pkg100;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author edgardo
@@ -17,6 +19,26 @@ public class PATS325AdivinaNuero0100 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
+        int random, valor, contador =0;
+        
+        random = (int)(Math.random()*100);
+        System.out.println(random);
+        
+        valor = Integer.parseInt(JOptionPane.showInputDialog("Ingresa un valor"));
+        
+        while (random != valor) {            
+            contador += 1;
+            
+            if (valor < random) {
+                JOptionPane.showMessageDialog(null, "Tu dato es MENOR que el que buscamos");
+            }else{
+                JOptionPane.showMessageDialog(null, "Tu dato es MAYO que el que buscamos");   
+            }
+            
+            valor = Integer.parseInt(JOptionPane.showInputDialog("Ingresa OTRO valor"));
+        }
+       JOptionPane.showMessageDialog(null, "Felicidades, encontraste el valor en " + contador + " intentos");
     }
     
 }
