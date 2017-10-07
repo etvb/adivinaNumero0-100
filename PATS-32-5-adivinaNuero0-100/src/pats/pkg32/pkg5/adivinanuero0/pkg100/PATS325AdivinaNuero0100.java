@@ -25,19 +25,21 @@ public class PATS325AdivinaNuero0100 {
         random = (int)(Math.random()*100);
         System.out.println(random);
         
-        valor = Integer.parseInt(JOptionPane.showInputDialog("Ingresa un valor"));
+        do{
+            
+            valor = Integer.parseInt(JOptionPane.showInputDialog("Ingresa un valor"));
         
-        while (random != valor) {            
-            contador += 1;
+            contador ++;
             
             if (valor < random) {
                 JOptionPane.showMessageDialog(null, "Tu dato es MENOR que el que buscamos");
-            }else{
+            }else if(valor > random){
                 JOptionPane.showMessageDialog(null, "Tu dato es MAYO que el que buscamos");   
             }
             
-            valor = Integer.parseInt(JOptionPane.showInputDialog("Ingresa OTRO valor"));
-        }
+        }while (random != valor);            
+        
+        
        JOptionPane.showMessageDialog(null, "Felicidades, encontraste el valor en " + contador + " intentos");
     }
     
